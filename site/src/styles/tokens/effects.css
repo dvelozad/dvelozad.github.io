@@ -1,0 +1,40 @@
+/* ============================================================
+   EFFECTS — glows, shadows, transitions, motion
+   The signature effect is a soft colored GLOW rather than a drop
+   shadow: elements sit on a dark field and emit light. Cards lift
+   on hover (translateY) and reveal a radial cursor-tracking glow.
+   Motion is calm: 0.25–0.4s eases, a "rise" entrance, no bounce.
+   ============================================================ */
+
+:root {
+  /* --- glows (kept subtle — this palette is flat, not neon) --- */
+  --glow:        0 0 22px rgba(232, 162, 76, 0.18);   /* amber */
+  --glow-charge: 0 0 22px rgba(197, 107, 84, 0.16);   /* terracotta */
+  --glow-emit:   0 0 18px rgba(111, 162, 146, 0.16);  /* sage */
+  --glow-line:   0 0 6px  rgba(232, 162, 76, 0.45);   /* eyebrow rule */
+
+  /* --- card radial cursor glow (positioned via --mx/--my in JS) --- */
+  --card-glow:   radial-gradient(400px circle at var(--mx, 50%) var(--my, 0%),
+                    rgba(232, 162, 76, 0.08), transparent 60%);
+
+  /* --- card surface wash (top-lit gradient) --- */
+  --card-wash:   linear-gradient(180deg, var(--bg-soft), transparent);
+
+  /* --- transitions --- */
+  --ease-out:    cubic-bezier(0.2, 0.7, 0.2, 1); /* @kind other */
+  --t-fast:      0.2s; /* @kind other */
+  --t-base:      0.25s; /* @kind other */
+  --t-mid:       0.35s; /* @kind other */
+  --t-slow:      0.4s; /* @kind other */
+
+  /* --- lift distances --- */
+  --lift-btn:    -2px; /* @kind spacing */
+  --lift-card:   -4px; /* @kind spacing */
+
+  /* --- reveal (scroll entrance) --- */
+  --reveal-from: translateY(30px); /* @kind other */
+}
+
+/* Shared keyframes shipped with the system. */
+@keyframes ds-rise  { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes ds-pulse { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }

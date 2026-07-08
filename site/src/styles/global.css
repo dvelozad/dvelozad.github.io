@@ -1,0 +1,67 @@
+/* ============================================================
+   GLOBAL — document reset + page chrome
+   (Ported from the prototype's inline <style> block in index.html.)
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--surface-page);
+  color: var(--text-strong);
+  font-family: var(--font-sans);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  transition: background var(--t-slow) ease, color var(--t-slow) ease;
+}
+
+a {
+  color: var(--field-a);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--field-c);
+}
+
+::selection {
+  background: var(--field-b);
+  color: #fff;
+}
+
+/* --- responsive layout adjustments --- */
+@media (max-width: 980px) {
+  .ds-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.4rem !important;
+  }
+  .ds-hero-panel {
+    max-width: 460px;
+  }
+}
+
+@media (max-width: 860px) {
+  .ds-about-grid,
+  .ds-card-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .ds-navlinks {
+    display: none !important;
+  }
+  .ds-flagship-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+  }
+}

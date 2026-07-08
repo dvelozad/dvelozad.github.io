@@ -1,0 +1,42 @@
+/* ============================================================
+   SPACING & LAYOUT
+   The site works on a generous editorial rhythm: 8vw page
+   gutters, ~8rem vertical section padding, and a 1200px content
+   cap. Radii are deliberately small (2–3px) — this is a precise,
+   instrument-like aesthetic, not a soft/rounded one.
+   ============================================================ */
+
+:root {
+  /* --- spacing scale (rem) --- */
+  --space-1:  0.35rem;
+  --space-2:  0.6rem;
+  --space-3:  0.9rem;
+  --space-4:  1.2rem;
+  --space-5:  1.5rem;
+  --space-6:  2rem;
+  --space-7:  2.6rem;
+  --space-8:  3.5rem;
+  --space-9:  5.5rem;
+  --space-10: 8rem;
+
+  /* --- layout --- */
+  --gutter:      8vw;          /* horizontal page padding */
+  --gutter-sm:   7vw;          /* mobile gutter */
+  --section-y:   8rem;         /* section vertical padding */
+  --maxw:        1200px;       /* content cap */
+  --maxw-text:   660px;        /* readable measure (lede/prose) */
+
+  /* --- gaps --- */
+  --gap-cards:   1.4rem;       /* project card grid gap */
+  --gap-about:   4rem;         /* about two-column gap */
+  --gap-nav:     1.8rem;       /* nav link gap */
+
+  /* --- radii (small & instrument-like) --- */
+  --radius-xs:   2px;          /* buttons, toggle */
+  --radius-sm:   3px;          /* cards */
+  --radius-pill: 999px;
+
+  /* --- hairline / grid --- */
+  --grid-cell:   64px;         /* hero background grid size */
+  --border-w:    1px;
+}

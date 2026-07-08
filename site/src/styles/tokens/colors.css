@@ -1,0 +1,82 @@
+/* ============================================================
+   COLORS — "Wes Anderson" palette
+   Muted, flat, vintage retro tones: warm cream and espresso
+   surfaces with ochre-amber, terracotta, and pine-sage accents.
+   No neon, no purple. Flat color blocks over glow.
+
+   Light (cream) is the default / signature look; dark is a warm
+   espresso "evening" variant. Base values live under :root
+   (dark) and [data-theme="light"]; semantic aliases map roles.
+   ============================================================ */
+
+:root,
+[data-theme="dark"] {
+  /* --- base surfaces (warm espresso) --- */
+  --bg:            #22201b;   /* warm near-black */
+  --bg-soft:       #2c2924;   /* raised surface / card top */
+  --ink:           #f0e6d2;   /* warm cream text */
+  --muted:         #a99f8a;   /* muted taupe */
+  --line:          rgba(240, 230, 210, 0.10); /* hairline borders */
+
+  /* --- signal / accent colors (muted, slightly warmed for dark) --- */
+  --field-a:       #e8a24c;   /* ochre-amber — primary */
+  --field-b:       #c56b54;   /* terracotta — charge */
+  --field-c:       #6fa292;   /* pine-sage teal — emission */
+  --field-a-soft:  #f0c07c;   /* lighter amber for particle heads */
+
+  /* --- canvas (phase-space field) --- */
+  --canvas-base:   #22201b;
+  --canvas-fade:   rgba(34, 32, 27, 0.075);
+
+  /* --- chrome --- */
+  --nav-bg:        rgba(34, 32, 27, 0.72);
+
+  /* ================= SEMANTIC ALIASES ================= */
+  --surface-page:      var(--bg);
+  --surface-card:      var(--bg-soft);
+  --surface-nav:       var(--nav-bg);
+
+  --text-strong:       var(--ink);
+  --text-body:         var(--muted);
+  --text-label:        var(--muted);
+  --text-accent:       var(--field-a);   /* eyebrows, tags */
+  --text-numeral:      var(--field-b);    /* section numbers */
+  --text-value:        var(--field-c);    /* fact values, emphasis */
+
+  --border-hairline:   var(--line);
+  --border-active:     rgba(232, 162, 76, 0.55);
+  --border-pub-hover:  rgba(197, 107, 84, 0.5);
+
+  --accent-primary:    var(--field-a);
+  --accent-charge:     var(--field-b);
+  --accent-emission:   var(--field-c);
+  --on-accent:         #22201b;   /* dark text on a filled amber button */
+
+  /* muted two-tone washes (used flat, not as glossy gradients) */
+  --gradient-field:    linear-gradient(100deg, var(--field-a), var(--field-b));
+  --gradient-emit:     linear-gradient(100deg, var(--field-c), var(--field-a));
+}
+
+[data-theme="light"] {
+  /* --- base surfaces (cream) --- */
+  --bg:            #f2e9d5;   /* warm cream */
+  --bg-soft:       #fbf5e6;   /* lighter card surface */
+  --ink:           #3a342a;   /* warm charcoal text */
+  --muted:         #7c7361;   /* muted brown-grey */
+  --line:          rgba(58, 52, 42, 0.14);
+
+  /* --- signal / accent colors (deeper for contrast on cream) --- */
+  --field-a:       #b5533c;   /* terracotta red — primary */
+  --field-b:       #c98a2b;   /* ochre — charge */
+  --field-c:       #4e8478;   /* pine-sage teal — emission */
+  --field-a-soft:  #c96b52;
+
+  --canvas-base:   #f2e9d5;
+  --canvas-fade:   rgba(242, 233, 213, 0.085);
+
+  --nav-bg:        rgba(242, 233, 213, 0.80);
+
+  --border-active:     rgba(181, 83, 60, 0.5);
+  --border-pub-hover:  rgba(201, 138, 43, 0.45);
+  --on-accent:         #fbf5e6;
+}
